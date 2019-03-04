@@ -3,6 +3,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -42,9 +43,10 @@ namespace Ct.Interview.Web.Api
 
         private async Task<IEnumerable<AsxListedCompany>> FetchRecords()
         {
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            stopwatch.Start();
             //Pure Code
             //streamHelper = new helper.StreamParser();
-
             //3rd Party
             streamHelper = new helper.CsvHelper();
 
@@ -58,6 +60,9 @@ namespace Ct.Interview.Web.Api
                 var cacheEntryOptions = new MemoryCacheEntryOptions();
                 _memoryCache.Set(now, asxListedCompanies, cacheEntryOptions);
             }
+
+            stopwatch.Stop();
+            Debug.WriteLine($"Completion Time : {stopwatch.ElapsedMilliseconds.ToString()}");
             return asxListedCompanies;
         }
     }

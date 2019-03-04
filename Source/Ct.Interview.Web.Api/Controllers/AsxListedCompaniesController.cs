@@ -29,11 +29,7 @@ namespace Ct.Interview.Web.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AsxListedCompany>>> Get()
         {
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            stopwatch.Start();
             var asxListedCompany = await _asxListedCompaniesService.GetAll();
-            stopwatch.Stop();
-            Debug.WriteLine($"Timespent : {stopwatch.ElapsedMilliseconds.ToString()}");
             return Ok(asxListedCompany);
         }
     }

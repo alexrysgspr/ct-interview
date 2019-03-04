@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ct.Interview.Web.Api", "Source\Ct.Interview.Web.Api\Ct.Interview.Web.Api.csproj", "{D9FBBD6F-E352-4FF9-9A20-7AE39B450357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ct.Interview.Web.Api", "Source\Ct.Interview.Web.Api\Ct.Interview.Web.Api.csproj", "{D9FBBD6F-E352-4FF9-9A20-7AE39B450357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ct-Interview.Test", "Ct-Interview.Test\Ct-Interview.Test.csproj", "{4E2794DB-1531-4AA8-8A6F-FD37EC9A9513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D9FBBD6F-E352-4FF9-9A20-7AE39B450357}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9FBBD6F-E352-4FF9-9A20-7AE39B450357}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9FBBD6F-E352-4FF9-9A20-7AE39B450357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2794DB-1531-4AA8-8A6F-FD37EC9A9513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2794DB-1531-4AA8-8A6F-FD37EC9A9513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2794DB-1531-4AA8-8A6F-FD37EC9A9513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2794DB-1531-4AA8-8A6F-FD37EC9A9513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
