@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,14 +28,15 @@ namespace Ct.Interview.Web.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(Configuration)
-                    .AddMemoryCache()
-                    .AddScoped<IAsxListedCompaniesService, AsxListedCompaniesService>()
-                    .AddMvc()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                    .AddJsonOptions(options =>
-                    {
-                        options.SerializerSettings.Formatting = Formatting.Indented;
-                    });
+                .AddSingleton<HttpClient>()
+                .AddMemoryCache()
+                .AddScoped<IAsxListedCompaniesService, AsxListedCompaniesService>()
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.Formatting = Formatting.Indented;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
